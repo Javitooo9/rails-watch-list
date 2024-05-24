@@ -1,0 +1,26 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://w0.peakpx.com/wallpaper/655/168/HD-wallpaper-red-man-cinema-chair-thumbnail.jpg);">
+  <div class="container">
+    <h1>Xavier'Cinema <strong> | Come here |</strong></h1>
+    <p>Discover the best movies of the world</p>
+    <%# <a class="btn btn-flat" href="#">Apply now</a> %>
+  </div>
+</div>
+
+
+<h1>Xavier Watchlist</h1>
+
+<%= link_to("create", "/lists/new", class: "btn btn-primary") %>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://png.pngtree.com/background/20210711/original/pngtree-new-film-premiere-theater-poster-picture-image_1092341.jpg)">
+<h3 class="text-white">Lists</h3>
+</div>
+<ul>
+  <% @lists.each do |list| %>
+    <div class="card-product">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQW8G-KxycOPvKD2Q5OKer5MIMGKFPWUHwl41eOc7OHkw&s" />
+      <div class="card-product-infos">
+        <h2><%= link_to(list.name, "/lists/#{list.id}") %></h2>
+        <p>Product description with <strong>relevant info</strong> only.</p>
+      </div>
+    </div>
+  <% end %>
+</ul>
